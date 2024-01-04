@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Deepak Parmar" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+
+    <title>Star Wars Characters</title>
+
+    <link rel="stylesheet" media="all" href="./style.css" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <img
+        id="logo"
+        src="./images/logo.png"
+        width="320"
+        height="32.75"
+        alt="Star Wars logo"
+      />
+    </header>
+
+    <main class="container">
+      <div class="cell">
+        <h2 class="label bi bi-person">&nbsp;Character</h2>
+        <p id="name" class="value character"></p>
+      </div>
+
+      <div class="cell">
+        <h2 class="label bi bi-people">&nbsp;Species</h2>
+        <p id="species" class="value"></p>
+      </div>
+
+      <div class="cell">
+        <h2 class="label bi bi-gender-ambiguous">&nbsp;Gender</h2>
+        <p id="gender" class="value"></p>
+      </div>
+
+      <div class="cell">
+        <h2 class="label bi bi-calendar2">&nbsp;Birthyear</h2>
+        <p id="birthYear" class="value"></p>
+      </div>
+
+      <div class="cell">
+        <h2 class="label bi bi-globe2">&nbsp;Homeworld</h2>
+        <p id="homeWorld" class="value"></p>
+      </div>
+
+      <div class="cell">
+        <h2 class="label bi bi-bicycle">&nbsp;Starships & Vehicles</h2>
+        <ul id="vehicles"></ul>
+      </div>
+
+      <div class="cell">
+        <h2 class="label bi bi-film">&nbsp;Appearances</h2>
+        <ul id="appearances"></ul>
+      </div>
+    </main>
+
+    <footer>
+      <button id="refresh" class="bi bi-arrow-clockwise" type="button"></button>
+      <p>
+        Powered by <a href="https://swapi.dev/" target="_blank">SWAPI</a>
+        <br />
+        Developed by
+        <a href="https://github.com/deepak-parmar" target="_blank"
+          >Deepak Parmar</a
+        >
+      </p>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
