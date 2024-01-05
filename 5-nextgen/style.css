@@ -1,0 +1,279 @@
+* {font-family: 'Sora', sans-serif;}
+
+body {
+	color: #fff;
+	font-family: sans-serif;
+	background-color: #7157ce;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.bg-yellow {
+	background-color: #e5ee27;
+}
+
+
+/* Header */
+header {
+	background-color: #7157ce;
+	display: flex;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	justify-content: space-between;
+	box-shadow: 0 0 15px #000;
+
+	padding: 0 3rem;
+	border-bottom: 2px solid #fff;
+}
+
+
+/* Logo */
+#logo {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: bolder;
+	padding: .7rem 2rem 0 0;
+	border-right: 2px solid #fff;
+}
+
+
+/* Navigation */
+nav {
+	display: flex;
+}
+
+nav a {
+	font-weight: bold;
+	padding: 1rem 1.5rem;
+	border-left: 2px solid #fff;
+	outline-color: #e5ee27;
+	position: relative;
+}
+
+nav a::before {
+	content: ' ';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	background-color: #e5ee27;
+	z-index: -1;
+	transition: height .2s;
+}
+
+nav a:hover::before {
+	height: 100%;
+}
+
+nav a:hover {
+	color: #000;
+}
+
+nav a:last-child {
+	color: #000;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-right: 2px solid #fff;
+}
+
+/* Hero section */
+#hero {
+	display: flex;
+	padding: 0 2.6rem 8rem 2.6rem;
+	border-bottom: 2px solid #fff;
+}
+
+
+/* Welcome section */
+#welcome {
+	flex-shrink: 1;
+	max-width: 380px;
+}
+
+#welcome h1 {
+	font-size: 3rem;
+	text-transform: capitalize;
+	margin-bottom: 0;
+}
+
+#welcome p {
+	margin-bottom: 3rem;
+}
+
+#welcome a {
+	color: #000;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	box-shadow: 5px 5px 0 #000;
+}
+
+#welcome a:hover {
+	box-shadow: -5px -5px;
+}
+
+
+/* Stats */
+#stats {
+	margin-top: 5rem;
+	display: flex;
+	gap: 3rem;
+}
+
+#stats span {
+	display: block;
+}
+
+#stats span:first-child {
+	display: block;
+	text-transform: uppercase;
+	text-shadow: 3px 3px 0 #000;
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: .8rem;
+}
+
+
+/* NFT card container */
+.nft-card-container {
+	width: 100%;
+	display: flex;
+	gap: 2rem;
+	justify-content: end;
+	padding: 3rem 2rem 0 2rem;
+}
+
+
+/* NFT cards */
+.nft-card {
+	color: #000;
+	box-shadow: 15px 15px 0 #000;
+	height: 420px;
+}
+
+.nft-card div {
+	padding: 1rem;
+	text-align: center;
+}
+
+.nft-card div > div {
+	display: flex;
+	justify-content: space-between;
+	gap: 1.5rem;
+}
+
+.nft-card h2 {
+	line-height: 0;
+	font-size: 1rem;
+	font-weight: lighter;
+	margin: 0;
+}
+
+.nft-card span {
+	line-height: 0;
+	font-weight: bolder;
+}
+
+.nft-card a {
+	display: inline-block;
+	color: #000;
+	font-size: .9rem;
+	padding: .5rem 1.5rem;
+	margin-top: .9rem;
+	border: 1px solid transparent;
+}
+
+.nft-card a:hover {
+	border-color: #000;
+}
+
+.nft-card:first-child {
+	background-color: #fff;
+	transform: translateY(100px);
+	animation: up-n-down 1s 1s infinite alternate;
+}
+
+.nft-card:nth-child(2) {
+	background-color: #f6bdc7;
+	transform: translateY(50px);
+	animation: up-n-down 1s 1s infinite alternate;
+}
+
+.nft-card:nth-child(3) {
+	background-color: #53d1fc;
+	animation: up-n-down 1s 1s infinite alternate;
+}
+
+.nft-card:hover {
+	animation: none;
+}
+
+
+/* Community section */
+#community {
+	margin: 4rem 0;
+	text-align: center;
+}
+
+#community h1 {
+	font-size: 2rem;
+}
+
+
+/* Platforms */
+#platforms {
+	display: grid;
+	grid-template-columns: repeat(3, 30%);
+	place-content: center;
+}
+
+#platforms div {
+	box-sizing: border-box;
+	flex-basis: 30%;
+	font-size: 6rem;
+	padding: 2rem;
+	border-radius: 2rem;
+}
+
+#platforms div:hover {
+	color: #7157ce;
+	background-color: #e5ee27;
+}
+
+
+/* Footer */
+footer {
+	padding: 2rem;
+	border-top: 2px solid #fff;
+	display: flex;
+	justify-content: space-between;
+}
+
+footer a {
+	color: #e5ee27;
+	font-weight: bold;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	text-decoration-style: dotted;
+}
+
+
+/* Animation */
+
+@keyframes up-n-down {
+	to {
+		transform: translateY(-30px);
+	}
+}
