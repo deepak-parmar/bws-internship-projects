@@ -1,48 +1,30 @@
 // Renders fetched character profile on page
 function renderCharacter(data) {
-  $("#name").html(`<h1>${data.name}</h1>`)
+  const { name, image, died, affiliations } = data
 
-  $("#image").css({
-    background: `url(${data.image}) no-repeat top center`,
-    backgroundSize: "cover"
+  $('#name').html(`<h1>${name}</h1>`)
+
+  $('#image').css({
+    background: `url(${image}) no-repeat top center`,
+    backgroundSize: 'cover'
   })
 
-  if (data.hasOwnProperty("died"))
-    $("#died").removeClass("d-none").addClass("d-flex")
-  else
-    $("#died").removeClass("d-flex").addClass("d-none")
+  const props = ['gender', 'homeworld', 'species']
+  props.forEach((prop) => { $(`#${prop}`).text(data[prop] || 'unknown') })
 
-  data.gender = data.gender == undefined ? "Unknown" : data.gender
-  $("#gender").text(data.gender)
+  $('#affiliations').text(affiliations.length ? affiliations.join(', ') : 'none')
 
-  data.homeworld = data.homeworld == undefined ? "Unknown" : data.homeworld
-  $("#homeWorld").text(data.homeworld)
-
-  data.species = data.species == undefined ? "Unknown" : data.species
-  $("#species").text(data.species)
-
-  if (data.affiliations.length > 0) {
-    let affiliation = ''
-
-    data.affiliations.forEach((element, index) => {
-      if (data.affiliations.length - 1 == index) affiliation += `<span class="me-2">${element}</span>`
-      else affiliation += `<span class="me-2">${element},</span>`
-    });
-
-    $("#affiliations").html(affiliation)
-  } else {
-    $("#affiliations").text("None")
-  }
+  died
+    ? $('#died').removeClass('d-none').addClass('d-flex')
+    : $('#died').removeClass('d-flex').addClass('d-none')
 }
 
 
 // Fetches character profile
 function fetchCharacter() {
-  $.get(
-    `https://akabab.github.io/starwars-api/api/id/${Math.ceil(Math.random() * 88)}.json`,
-    (data) => { renderCharacter(data) }
-  )
-    .fail(() => { alert("Character not found. Refresh!") })
+  const url = `https://akabab.github.io/starwars-api/api/id/${Math.ceil(Math.random() * 88)}.json`
+  $.get(url, (data) => { renderCharacter(data) })
+    .fail(() => { alert('Character not found. Refresh!') })
 }
 
 
@@ -50,4 +32,5 @@ function fetchCharacter() {
 $(document).ready(fetchCharacter)
 
 // Fetch and render new character on click
-$("#refresh").on("click", fetchCharacter)
+$('#refresh').on('click', fetchCharacter)
+
