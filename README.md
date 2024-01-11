@@ -6,3 +6,4 @@
 8. [Star Wars Random Profile Generator](https://deepak-parmar.github.io/bws-internship-projects/8-star-wars-random-profile-generator/)
 9. [Wingman - A Bootstrap Theme Page Clone](https://deepak-parmar.github.io/bws-internship-projects/9-wingman)
 10. [Star Wars Random Profile Generator with Bootstrap](https://deepak-parmar.github.io/bws-internship-projects/10-star-wars-random-profile-generator-bootstrap/)
+11. [Star Wars Archive](https://deepak-parmar.github.io/bws-internship-projects/11-star-wars-archive/)
